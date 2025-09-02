@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import ProjectDetail from "./pages/ProjectDetail";
 
+const basename = "/portfolio";
+
 const Router = () => (
-  <BrowserRouter>
+  <BrowserRouter basename={basename}>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/project/:id" element={<ProjectDetail />} />

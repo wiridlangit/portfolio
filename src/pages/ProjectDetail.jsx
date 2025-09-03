@@ -13,11 +13,16 @@ const ProjectDetail = () => {
   return (
     <div className="max-w-5xl mx-auto mt-24 bg-zinc-800 p-12 rounded-2xl shadow-2xl">
       <div className="flex flex-col gap-8 items-center">
-        <img src={proyek.gambar} alt={proyek.nama} className="w-full max-w-3xl rounded-lg shadow-lg" />
+        <a href={proyek.gambar} target="_blank" rel="noopener noreferrer">
+            <img src={proyek.gambar} alt={proyek.nama} className="w-full max-w-3xl rounded-lg shadow-lg cursor-pointer" />
+        </a>
         {proyek.gallery && proyek.gallery.length > 1 && (
           <div className="flex flex-col gap-8 w-full items-center">
             {proyek.gallery.slice(1).map((img, idx) => (
-              <img key={idx} src={img} alt={proyek.nama + ' gallery'} className="w-full max-w-3xl rounded-lg shadow-lg" />
+              // <img key={idx} src={img} alt={proyek.nama + ' gallery'} className="w-full max-w-3xl rounded-lg shadow-lg" />
+              <a href={img} target="_blank" rel="noopener noreferrer">
+                <img key={idx} src={img} alt={proyek.nama + ' gallery'} className="w-full max-w-3xl rounded-lg shadow-lg cursor-pointer" />
+              </a>
             ))}
           </div>
         )}
@@ -30,7 +35,7 @@ const ProjectDetail = () => {
             <span key={idx} className="py-1 px-4 border border-zinc-500 bg-zinc-600 rounded-md font-semibold text-base">{tool}</span>
           ))}
         </div>
-        <a href="/" className="text-violet-400 hover:underline text-lg">&larr; Back to Home</a>
+        <a href="/portfolio/" className="text-violet-400 hover:underline text-lg">&larr; Back to Home</a>
       </div>
     </div>
   );

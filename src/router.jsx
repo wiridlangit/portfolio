@@ -7,7 +7,7 @@ const basename = "/portfolio";
 const Router = () => (
   <BrowserRouter basename={basename}>
     <Routes>
-      <Route path="/portfolio" element={<App />} />
+      <Route path="/" element={<App />} />
       <Route path="/project/:id" element={<ProjectDetail />} />
     </Routes>
   </BrowserRouter>

@@ -5,7 +5,7 @@ import ProjectDetail from "./pages/ProjectDetail";
 const basename = "/portfolio";
 
 const Router = () => (
-  <BrowserRouter basename={basename}>
+  <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
       <Route path="/project/:id" element={<ProjectDetail />} />

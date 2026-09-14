@@ -2,8 +2,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import ProjectDetail from "./pages/ProjectDetail";
 
-const basename = "/portfolio";
-
 const Router = () => (
   <BrowserRouter>
     <Routes>

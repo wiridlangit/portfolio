@@ -1,7 +1,174 @@
 @import "tailwindcss";
 
-@layer base{
-  body {
-    font-family: 'Poppins', sans-serif;
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-term-bg: #080b0a;
+  --color-term-surface: #0e1412;
+  --color-term-elevated: #131b18;
+  --color-term-border: #1d2724;
+  --color-term-border-bright: #2c3a35;
+  --color-term-text: #e6efea;
+  --color-term-muted: #8ba39a;
+  --color-term-faint: #5c6f68;
+  --color-term-accent: #5ee6a8;
+  --color-term-accent-dim: #2f7f5f;
+  --color-term-amber: #e9b949;
+  --color-term-cyan: #62d0dd;
+
+  --animate-blink: blink 1.05s steps(2, start) infinite;
+  --animate-glow: glow 3.5s ease-in-out infinite;
+  --animate-scan: scan 9s linear infinite;
+  --animate-drift: drift 24s ease-in-out infinite alternate;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
   }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes drift {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(3%, -4%, 0) scale(1.12);
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+  }
+
+  body {
+    background-color: var(--color-term-bg);
+    color: var(--color-term-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: var(--color-term-accent);
+    color: var(--color-term-bg);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-term-accent);
+    outline-offset: 2px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-term-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-term-border-bright);
+    border-radius: 9999px;
+    border: 2px solid var(--color-term-bg);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-term-accent-dim);
+  }
+}
+
+@utility text-glow {
+  text-shadow: 0 0 18px color-mix(in oklab, var(--color-term-accent) 45%, transparent);
+}
+
+@utility grid-bg {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--color-term-border) 60%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-term-border) 60%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@utility grid-bg-fade {
+  mask-image: radial-gradient(ellipse 75% 55% at 50% 0%, #000 30%, transparent 100%);
+}
+
+@utility panel {
+  border: 1px solid var(--color-term-border);
+  background-color: color-mix(in oklab, var(--color-term-surface) 82%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+/* Certificate carousel: give the slides room so the pagination dots
+   sit below the cards instead of floating over them. */
+.cert-swiper .swiper {
+  padding-bottom: 3.5rem;
+  overflow: hidden;
+}
+
+.cert-swiper .swiper-pagination {
+  bottom: 0.75rem;
+}
+
+.cert-swiper .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  background: var(--color-term-faint);
+  opacity: 1;
+  transition: background-color 0.2s ease, width 0.2s ease;
+}
+
+.cert-swiper .swiper-pagination-bullet-active {
+  width: 22px;
+  border-radius: 9999px;
+  background: var(--color-term-accent);
+}
+
+.cert-swiper .swiper-button-next,
+.cert-swiper .swiper-button-prev {
+  color: var(--color-term-accent);
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 9999px;
+  background: color-mix(in oklab, var(--color-term-surface) 90%, transparent);
+  border: 1px solid var(--color-term-border);
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.cert-swiper .swiper-button-next:hover,
+.cert-swiper .swiper-button-prev:hover {
+  border-color: var(--color-term-accent);
+}
+
+.cert-swiper .swiper-button-next::after,
+.cert-swiper .swiper-button-prev::after {
+  font-size: 0.875rem;
+  font-weight: 700;
 }

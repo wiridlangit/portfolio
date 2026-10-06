@@ -70,10 +70,10 @@ export const experience = [
     org: 'Institut Teknologi Sepuluh Nopember (ITS)',
     period: '2021 - 2025',
     location: 'Surabaya, Indonesia',
-    summary: 'Graduated with a GPA of 3.74 / 4.00, with large interest in IoT and data-driven systems.',
+    summary: 'IT graduate, with large interest in IoT and data-driven systems.',
     points: [
       'Coursework and capstone work centred on intelligent systems and embedded deployment.',
     ],
-    tags: ['GPA 3.74', 'Information Technology'],
+    tags: ['Information Technology', 'ITS'],
   },
 ];

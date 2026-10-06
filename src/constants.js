@@ -7,14 +7,14 @@ export const site = {
 };
 
 export const contact = {
-  email: 'wiridlangitjiwangga@gmail.com',
+  email: 'wiridlangit@gmail.com',
   location: 'Jakarta, Indonesia',
-  formEndpoint: 'https://formsubmit.co/wiridlangitjiwangga@gmail.com',
+  formEndpoint: 'https://formsubmit.co/wiridlangit@gmail.com',
 };
 
 export const resume = {
-  path: '/assets/CV_Wiridlangit.pdf',
-  fileName: 'CV_Wiridlangit.pdf',
+  path: '/assets/CV_Wiridlangit_Web_Version.pdf',
+  fileName: 'Best_CV_in_the_world.pdf',
 };
 
 export const socials = [

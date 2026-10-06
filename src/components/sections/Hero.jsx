@@ -103,7 +103,7 @@ export default function Hero() {
               <span className="text-term-accent">$</span> identify --self
             </p>
             <p className="shrink-0 font-mono text-xs text-term-accent">
-              {profile.initials} · {profile.nickname}
+              {profile.nickname2} · {profile.nickname1}
             </p>
           </div>
         </div>

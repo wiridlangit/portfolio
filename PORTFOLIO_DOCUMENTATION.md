@@ -160,7 +160,7 @@ Defined in `src/index.css:26-62`, consumed as Tailwind classes:
 - `animate-blink`: cursor in BootSequence, Navbar, Hero, Terminal, NotFound
 - `animate-drift`, `animate-glow`, `animate-scan`: `Backdrop.jsx:6-12` (three blurred radial blobs + grid + scanline)
 - `animate-glow`: IEEE publication orb (`Publications.jsx:20`)
-- `animate-ping`: "Open to Work" status dot (`Terminal.jsx:83`)
+- `animate-ping`: "Building & Innovating" status dot (`Terminal.jsx:83`)
 
 ### 6.3 Animate.css (overlays)
 Imported in `main.jsx:9`. Used sparingly:

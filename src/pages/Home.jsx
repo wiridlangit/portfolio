@@ -8,6 +8,7 @@ import Tools from '../components/sections/Tools';
 import Projects from '../components/sections/Projects';
 import Certificates from '../components/sections/Certificates';
 import Contact from '../components/sections/Contact';
+import ServerStatus from '../components/sections/ServerStatus';
 
 export default function Home() {
   useSeo({
@@ -24,6 +25,7 @@ export default function Home() {
       <Projects />
       <Certificates />
       <Contact />
+      <ServerStatus />
     </>
   );
 }

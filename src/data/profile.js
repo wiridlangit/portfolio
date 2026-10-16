@@ -6,7 +6,7 @@ export const profile = {
   nickname1: 'Langit',
   image: HeroImage,
   location: 'Jakarta, Indonesia',
-  status: 'Open to Work',
+  status: 'Building & Innovating',
   role: 'Product Development at Brinks',
   focus: ['Information Technology', 'IoT', 'Smart City'],
   greeting: 'Hi, my name is Wiridlangit Jiwangga',

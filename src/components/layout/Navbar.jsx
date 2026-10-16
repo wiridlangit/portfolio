@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { navLinks, socials } from '../../constants';
+import { navLinks } from '../../constants';
 import { profile } from '../../data';
-
-const linkedin = socials.find((social) => social.id === 'linkedin');
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -67,16 +65,6 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-2">
-          <a
-            href={linkedin.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hidden items-center gap-2 rounded-lg border border-term-accent/50 bg-term-accent/10 px-3.5 py-2.5 font-mono text-sm text-term-accent transition-all duration-200 hover:-translate-y-0.5 hover:bg-term-accent hover:text-term-bg sm:inline-flex"
-            aria-label="LinkedIn profile — opens in a new tab"
-          >
-            <i className="ri-linkedin-fill text-base" aria-hidden="true" />
-            LinkedIn
-          </a>
 
           <button
             type="button"
@@ -116,17 +104,6 @@ export default function Navbar() {
               </Link>
             </li>
           ))}
-          <li className="pt-2 sm:hidden">
-            <a
-              href={linkedin.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-term-accent/50 bg-term-accent/10 px-3 py-2.5 font-mono text-sm text-term-accent"
-            >
-              <i className="ri-linkedin-fill text-base" aria-hidden="true" />
-              Connect on LinkedIn
-            </a>
-          </li>
         </ul>
       </div>
 

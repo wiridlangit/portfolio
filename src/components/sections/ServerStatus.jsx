@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { SectionHeading, TerminalCard } from '../ui/Terminal';
 
 const API_URL = 'https://api.jiwangga.com/api/v1/status';
@@ -241,14 +240,6 @@ async function fetchStatus() {
               <dd className="mt-1 font-mono text-sm text-term-text">every {POLL_INTERVAL / 1000}s</dd>
             </div>
           </dl>
-
-          <Link
-            to="/hardware"
-            className="mt-6 flex w-full items-center justify-between gap-2 rounded-lg border border-term-border-bright bg-term-surface/60 px-4 py-3 font-mono text-sm text-term-text transition-all duration-200 hover:-translate-y-0.5 hover:border-term-accent hover:text-term-accent"
-          >
-            explore this server in 3D
-            <span aria-hidden="true">→</span>
-          </Link>
         </TerminalCard>
       </div>
 

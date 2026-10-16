@@ -14,7 +14,7 @@ export function usePrefersReducedMotion() {
   return reduced;
 }
 
-export function useTypewriter(lines, { speed = 34, startDelay = 300, linePause = 460 } = {}) {
+export function useTypewriter(lines, { speed = 1, startDelay = 300, linePause = 460 } = {}) {
   const reducedMotion = usePrefersReducedMotion();
   const [completed, setCompleted] = useState(0);
   const [typed, setTyped] = useState('');

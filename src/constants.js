@@ -49,4 +49,5 @@ export const navLinks = [
   { id: 'projects', label: 'projects', command: 'ls projects/' },
   { id: 'certificates', label: 'certificates', command: 'ls certificates/' },
   { id: 'contact', label: 'contact', command: './say-hello.sh' },
+  { id: 'server-status', label: 'server_status', command: './check-server.sh' },
 ];
